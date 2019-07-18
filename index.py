@@ -7,6 +7,10 @@ ua = UserAgent()
 header = {'user-agent': ua.chrome}
 
 review_page = requests.get('https://www.consumerreports.org/cro/a-to-z-index/products/index.htm', headers = header)
+print(review_page.content)
+
+soup = BeautifulSoup(review_page.content, 'lxml')
+print(soup)
 
 soup = BeautifulSoup(review_page.content, 'lxml')
 
